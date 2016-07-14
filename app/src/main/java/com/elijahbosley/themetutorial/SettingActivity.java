@@ -2,10 +2,10 @@ package com.elijahbosley.themetutorial;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 public class SettingActivity extends AppCompatActivity {
 
@@ -14,6 +14,8 @@ public class SettingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         SetupTheme.setupWindowTheme(this);
         getFragmentManager().beginTransaction().replace(android.R.id.content, new MyPreferenceFragment()).commit();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override
